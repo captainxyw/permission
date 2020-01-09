@@ -1,6 +1,9 @@
 package com.permission.dao;
 
 import com.permission.model.SysAclModule;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SysAclModuleMapper {
     /**
@@ -50,4 +53,12 @@ public interface SysAclModuleMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SysAclModule record);
+
+    List<SysAclModule> getChildAclModuleListByLevel(@Param("level") String level);
+
+    void batchUpdateLevel(@Param("sysAclModuleList") List<SysAclModule> sysAclModuleList);
+
+  int countByNameAndParentId(@Param("parentId")Integer parentId,  @Param("name")String aclModuleName, @Param("id")Integer aclModuleId);
+
+    List<SysAclModule> getAllAclModule();
 }
