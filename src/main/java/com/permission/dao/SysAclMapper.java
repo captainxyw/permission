@@ -1,6 +1,10 @@
 package com.permission.dao;
 
+import com.permission.beans.PageQuery;
 import com.permission.model.SysAcl;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SysAclMapper {
     /**
@@ -50,4 +54,10 @@ public interface SysAclMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SysAcl record);
+
+    int countByAclModuleId(@Param("aclModuleId") int aclModuleId);
+
+    List<SysAcl> getPageByAclModuleId(@Param("aclModuleId") int aclModuleId, @Param("page") PageQuery page);
+
+    int countByNameAndAclModuleId(@Param("aclModuleId") int aclModuleId, @Param("name") String name, @Param("id") Integer id);
 }
