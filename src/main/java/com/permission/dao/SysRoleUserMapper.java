@@ -1,6 +1,9 @@
 package com.permission.dao;
 
 import com.permission.model.SysRoleUser;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SysRoleUserMapper {
     /**
@@ -50,4 +53,6 @@ public interface SysRoleUserMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SysRoleUser record);
+
+    List<Integer> getRoleIdListByUserId(@Param("userId") int userId);
 }
