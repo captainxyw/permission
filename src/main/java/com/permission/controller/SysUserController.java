@@ -1,10 +1,13 @@
 package com.permission.controller;
 
+import com.google.common.collect.Maps;
 import com.permission.beans.PageQuery;
 import com.permission.beans.PageResult;
 import com.permission.common.JsonData;
 import com.permission.model.SysUser;
 import com.permission.param.UserParam;
+import com.permission.service.SysRoleService;
+import com.permission.service.SysTreeService;
 import com.permission.service.SysUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * Package:com.permission.controller
@@ -26,6 +30,10 @@ public class SysUserController {
 
   @Resource
   private SysUserService sysUserService;
+  @Resource
+  private SysTreeService sysTreeService;
+  @Resource
+  private SysRoleService sysRoleService;
 
   @RequestMapping("/save.json")
   @ResponseBody
@@ -48,4 +56,12 @@ public class SysUserController {
     return JsonData.success(result);
   }
 
+  @RequestMapping("acls.json")
+  @ResponseBody
+  public JsonData acls(@RequestParam("userId")int userId) {
+    Map<String, Object> map = Maps.newHashMap();
+    map.put("acls", sysTreeService.userAclTree(userId));
+    map.put("roles", sysRoleService.getRoleListByUserId(userId));
+    return JsonData.success(map);
+  }
 }

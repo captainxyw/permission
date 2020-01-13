@@ -3,6 +3,7 @@ package com.permission.service;
 import com.google.common.base.Preconditions;
 import com.permission.common.RequestHolder;
 import com.permission.dao.SysDeptMapper;
+import com.permission.dao.SysUserMapper;
 import com.permission.exception.ParamException;
 import com.permission.model.SysDept;
 import com.permission.param.DeptParam;
@@ -29,6 +30,9 @@ public class SysDeptService {
 
   @Resource
   private SysDeptMapper sysDeptMapper;
+
+  @Resource
+  private SysUserMapper sysUserMapper;
 
   public void save(DeptParam param) {
     BeanValidator.check(param);
@@ -96,5 +100,18 @@ public class SysDeptService {
       return null;
     }
       return dept.getLevel();
+  }
+
+  public void delete(int deptId) {
+    SysDept dept = sysDeptMapper.selectByPrimaryKey(deptId);
+    Preconditions.checkNotNull(dept, "待删除的部门不存在，无法删除");
+    if(sysDeptMapper.countByParentId(dept.getId()) > 0) {
+      throw new ParamException("当前部门下面有子部门，无法删除");
+    }
+    if(sysUserMapper.countByDeptId(deptId) > 0) {
+      throw new ParamException("当前部门下面有用户，无法删除");
+    }
+
+    sysDeptMapper.deleteByPrimaryKey(deptId);
   }
 }

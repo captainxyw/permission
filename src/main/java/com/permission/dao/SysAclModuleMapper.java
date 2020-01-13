@@ -61,4 +61,6 @@ public interface SysAclModuleMapper {
   int countByNameAndParentId(@Param("parentId")Integer parentId,  @Param("name")String aclModuleName, @Param("id")Integer aclModuleId);
 
     List<SysAclModule> getAllAclModule();
+
+    int countByParentId(@Param("aclModuleId") int aclModuleId);
 }
