@@ -1,5 +1,6 @@
 com\permission\model\SysAcl$SysAclBuilder.class
 com\permission\common\RequestHolder.class
+com\permission\service\SysRoleUserService.class
 com\permission\service\SysTreeService.class
 com\permission\common\ApplicationContextHelper.class
 com\permission\exception\ParamException.class
@@ -19,6 +20,8 @@ com\permission\dao\SysRoleAclMapper.class
 com\permission\service\SysCoreService.class
 com\permission\param\AclParam.class
 com\permission\service\SysTreeService$2.class
+com\permission\util\StringUtil.class
+com\permission\service\SysRoleAclService.class
 com\permission\util\BeanValidator.class
 com\permission\controller\SysDeptController.class
 com\permission\model\SysLog.class
@@ -33,6 +36,7 @@ com\permission\controller\SysUserController.class
 com\permission\dao\SysAclModuleMapper.class
 com\permission\dto\AclModuleLevelDto.class
 com\permission\util\MailUtil.class
+com\permission\model\SysRoleUser$SysRoleUserBuilder.class
 com\permission\util\IpUtil.class
 com\permission\model\SysRoleUser.class
 com\permission\exception\PermisssionException.class
@@ -64,6 +68,7 @@ com\permission\param\RoleParam.class
 com\permission\service\SysRoleService.class
 com\permission\dto\DeptLevelDto.class
 com\permission\service\SysDeptService.class
+com\permission\model\SysRoleAcl$SysRoleAclBuilder.class
 com\permission\service\SysTreeService$3.class
 com\permission\util\JsonMapper.class
 com\permission\common\SpringExceptionResolver.class

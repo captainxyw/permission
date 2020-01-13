@@ -5,9 +5,11 @@ D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\dao\SysAclModul
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\controller\SysRoleController.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\dto\AclDto.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\service\SysDeptService.java
+D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\service\SysRoleAclService.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\util\LevelUtil.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\controller\SysUserController.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\dao\SysLogMapper.java
+D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\service\SysRoleUserService.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\param\AclModuleParam.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\common\HttpInterceptor.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\common\ApplicationContextHelper.java
@@ -42,6 +44,7 @@ D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\util\JsonMapper
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\dto\AclModuleLevelDto.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\controller\TestController.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\param\DeptParam.java
+D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\util\StringUtil.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\param\AclParam.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\util\MailUtil.java
 D:\xuyewei\IDEAworkspace\permission\src\main\java\com\permission\util\MD5Util.java
