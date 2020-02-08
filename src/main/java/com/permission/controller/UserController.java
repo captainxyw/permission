@@ -37,6 +37,7 @@ public class UserController {
   public void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
     String username = request.getParameter("username");
     String password = request.getParameter("password");
+    System.out.println(MD5Util.encrypt(password)+"0000000000000000000000000000000000");
 
     SysUser sysUser = sysUserService.findByKeyword(username);
     String errorMsg = "";
